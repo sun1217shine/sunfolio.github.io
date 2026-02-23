@@ -1,0 +1,73 @@
+@import url(/css/font.css);
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000028;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-scrollbar: none;
+  scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+  body, html {
+    font-size: 16px;
+  }
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+a:focus-visible {
+  text-decoration: none;
+  color: inherit;
+  outline-color: #4747D4;
+}
+
+button, input, select, textarea {
+  background: 0 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

@@ -1,0 +1,68 @@
+
+@include bp('xxl'){
+    .container{padding: 0 60px;max-width: 100%;}
+        
+    .intro{
+        &-unit{
+            .tit{font-size: 48px;}
+        }
+    }
+
+}
+
+
+@include bp('xl'){
+
+    .intro{
+        &-head{
+            .tit{font-size: 64px;}
+        }
+        &-unit{padding:2rem}
+    }
+        
+}
+
+
+
+@include bp('lg'){
+    .container{padding: 0 40px;height: auto;}
+    .intro{height:auto;
+        &-list{gap:12px;}    
+        &-head{column-gap: 24px;
+            .tit{font-size: 48px;}
+        }
+        &-unit{
+            .tit{font-size: 32px;}
+            .txt{font-size: inherit;}
+            .info{font-size: 14px;}
+        }
+    }
+}
+
+
+
+@include bp('md'){
+    .container{padding: 0 24px;}
+
+    .intro{height: auto;padding:60px 0;
+        &-head{column-gap: 12px;
+            .tit{font-size: 40px;}
+            .line{height: 8px;}
+            .dot{width: 16px;height: 16px;}
+        }
+        &-list{flex-direction: column;}
+        &-unit{gap: 24px;padding: 1.5rem 2rem;
+            .tit-box{display: flex;align-items: center;justify-content: flex-end;gap: 16px;}
+            .tit{margin-top: 0;font-size: 32px;}
+            .info{width: 100%;
+                .line{height: 1px;}
+            }
+        }
+    }
+}
+
+
+
+@include bp('sm'){
+    .container{padding: 0 16px;}
+}

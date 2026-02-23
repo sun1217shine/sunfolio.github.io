@@ -1,0 +1,169 @@
+@import url(/css/font.css);
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  width: 100%;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000028;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-scrollbar: none;
+  scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+  body, html {
+    font-size: 16px;
+  }
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+a:focus-visible {
+  text-decoration: none;
+  color: inherit;
+  outline-color: #4747D4;
+}
+
+button, input, select, textarea {
+  background: 0 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media (max-width: 1920px) {
+  .container {
+    padding: 0 60px;
+    max-width: 100%;
+  }
+  .intro-unit .tit {
+    font-size: 48px;
+  }
+}
+@media (max-width: 1400px) {
+  .intro-head .tit {
+    font-size: 64px;
+  }
+  .intro-unit {
+    padding: 2rem;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    padding: 0 40px;
+    height: auto;
+  }
+  .intro {
+    height: auto;
+  }
+  .intro-list {
+    gap: 12px;
+  }
+  .intro-head {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
+  .intro-head .tit {
+    font-size: 48px;
+  }
+  .intro-unit .tit {
+    font-size: 32px;
+  }
+  .intro-unit .txt {
+    font-size: inherit;
+  }
+  .intro-unit .info {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  .intro {
+    height: auto;
+    padding: 60px 0;
+  }
+  .intro-head {
+    -moz-column-gap: 12px;
+         column-gap: 12px;
+  }
+  .intro-head .tit {
+    font-size: 40px;
+  }
+  .intro-head .line {
+    height: 8px;
+  }
+  .intro-head .dot {
+    width: 16px;
+    height: 16px;
+  }
+  .intro-list {
+    flex-direction: column;
+  }
+  .intro-unit {
+    gap: 24px;
+    padding: 1.5rem 2rem;
+  }
+  .intro-unit .tit-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  .intro-unit .tit {
+    margin-top: 0;
+    font-size: 32px;
+  }
+  .intro-unit .info {
+    width: 100%;
+  }
+  .intro-unit .info .line {
+    height: 1px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
+}
