@@ -23,17 +23,18 @@ $breakpoints: (
 }
 
 // style
-$main_color01:#000080;
-$main_color02:#FFFF12;
-$main_color03:#4747D4;
-$bg_color01:#EEEEFF;
-$bg_color02:#E8E8E8;
-$gray_color01:#000028;
-$gray_color02:#484856;
-$gray_color03:#7E7E94;
+$main-color01:#000080;
+$main-color02:#FFFF12;
+$main-color03:#4747D4;
+$bg-color01:#EEEEFF;
+$bg-color02:#E8E8E8;
+$gray-color01:#000028;
+$gray-color02:#484856;
+$gray-color03:#7E7E94;
+$gray-color04:#C7C7C7;
 $radius:16px;
-$radius_sm:8px;
-$radius_lg:40px;
+$radius-sm:8px;
+$radius-lg:40px;
 $oval:100px;
 $circle:50%;
 @include bp('md'){
@@ -42,8 +43,7 @@ $circle:50%;
 
 // reset
 *,::after,::before{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body,html{height:100%;width:100%;overflow-x: hidden;font-family:Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,sans-serif;font-size:18px;line-height:1.5;color:$gray_color01;-ms-overflow-style: none;scrollbar-width: none;-webkit-scrollbar: none;
-
+body,html{width:100%;overflow-x: hidden;font-family:Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,sans-serif;font-size:18px;line-height:1.5;color:$gray-color01;-ms-overflow-style: none;scrollbar-width: none;-webkit-scrollbar: none; scroll-behavior: smooth;
     @include bp('md'){font-size: 16px;}
 }
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -53,7 +53,7 @@ a{text-decoration:none;color:inherit;
   @media (hover: hover) and (pointer: fine) {
     &:hover {text-decoration:none;color:inherit;}
   }
-  &:focus-visible { text-decoration:none;color:inherit; outline-color: $main_color03;}
+  &:focus-visible { text-decoration:none;color:inherit; outline-color: $main-color03;}
 }
 button,input,select,textarea{background:0 0;border:0;font:inherit;color:inherit;outline:0}
 button{cursor:pointer}
