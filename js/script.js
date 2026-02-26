@@ -1,63 +1,89 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
-    // plugin /////////////////////////////////////////////////////////
+    // common /////////////////////////////////////////////////////////
+    // plugin
+    const lenis = new Lenis();
     gsap.registerPlugin(ScrollTrigger);
+    const windowWidth = gsap.matchMedia();
 
-    const mainCon = gsap.utils.toArray(".main-con");
-    const sections = gsap.utils.toArray("section");
+    // scroll 부드럽게
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
 
-    // fullpage
-    // gsap.to(sections, {
-    //     yPercent: -100 * (sections.length - 1), 
-    //     ease: "none",
-    //     scrollTrigger: {
-    //         trigger: mainCon,
-    //         pin: true,
-    //         scrub: 2,   
-    //         end: () => "+=" + window.innerHeight * sections.length, 
-    //         markers: true,
-    //         snap: {
-    //                 snapTo: 1 / (sections.length - 1),
-    //                 duration: { min: 0, max: 0 }, 
-    //                 delay: 0,   
-    //                 ease: "power2.inOut"     
-    //             }
-    //     }
-    // });
 
-    // bg color
-    sections.forEach((item) => {
-        let color = item.getAttribute("data-bgcolor");
-        ScrollTrigger.create({
-            trigger: item,
-            start: "cetner 70%",
-            end: "center 30%",
-            markers: true,
-            onEnter: () => gsap.to("body", {
-                backgroundColor: color,
-                duration: 1.4,
-            }),
-            onEnterBack: () => gsap.to("body", {
-                backgroundColor: color,
-                duration: 1.4,
-            }),
-        });
+    // link 아이템 크기 확장
+    const linkSection = document.querySelector('.link');
+    const linkList = document.querySelector('.link .link-list');
+    gsap.to(linkList, {
+        width: "100%",
+        duration: 1,
+        scrollTrigger: {
+            trigger: linkSection,
+            start: "top 20%",
+            end: "30% 30%",
+            scrub: 1.5,
+        }
     });
 
-    // profile text
-    const textElements = gsap.utils.toArray('.profile .txt');
-        textElements.forEach(text => {
-            gsap.to(text, {
-                backgroundSize: '100%',
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: text,
-                    start: 'center 50%',
-                    end: 'center 40%',
-                    scrub: true,
-                },
+
+
+
+
+    // PC /////////////////////////////////////////////////////////
+    windowWidth.add("(min-width: 993px)", () => {
+        // visual pin 효과
+        const visualSection = gsap.utils.toArray(".visual");
+        visualSection.forEach((panel, i) => {
+            ScrollTrigger.create({
+                trigger: panel,
+                start: "top top",
+                pin: true,
+                scrub: .5,
+                pinSpacing: false,
+                markers: true
             });
+        })
+
+        // visual txt 효과
+        const visualScroll = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".visual .container",
+                start: "top top",
+                end: "center 10%",
+                scrub: .5,
+                markers: true
+            }
         });
+        visualScroll.to(".visual .txt-area .txt-item", { x: 0, y: 0, opacity: 1 })
+
+
+
+
+
+
+    });
+
+
+
+
+    // mobile /////////////////////////////////////////////////////////
+    windowWidth.add("(max-width: 992px)", () => {
+
+        gsap.to(".visual .txt-area .txt-item", { x: 0, y: 0, opacity: 1 })
+
+    });
+
+
+
+
+
+
+
+    // profile /////////////////////////////////////////////////////////
+
 
 
 
