@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // scroll 부드럽게
     lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
 
     // link 아이템 크기 확장
@@ -26,6 +24,28 @@ document.addEventListener('DOMContentLoaded', () => {
             scrub: 1.5,
         }
     });
+
+    // profile 
+    const profileSection = document.querySelector(".profile");
+    const profileTag = document.querySelectorAll(".profile .tag p")
+    ScrollTrigger.create({
+        trigger: profileSection,
+        start: "top+=2 top",
+        end: "center 10%",
+        onEnter: () => profileSection.classList.add("active"),
+        onLeaveBack: () => profileSection.classList.remove("active"),
+    });
+
+    profileTag.forEach((item, i) => {
+        gsap.to(item,{
+            opacity:1,
+        },
+        i * 0.5
+        )
+    });
+
+
+
 
 
     // PC /////////////////////////////////////////////////////////
@@ -48,22 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const visualScroll = gsap.timeline({
             scrollTrigger: {
                 trigger: ".visual .container",
-                start: "top top",
+                start: "top=+1 top",
                 end: "center 10%",
                 scrub: 1.5,
             }
         });
+
         visuaItems.forEach((item, i) => {
             visualScroll.fromTo(item,
-                { opacity: 0 },
                 {
-                    duration: 1, opacity: 1,
+                    opacity: 0
+                },
+                {
+                    opacity: 1,
+                    duration: 1,
                     onStart: () => item.classList.add("height-up"),
+                    onReverseStart: () => item.classList.remove("height-up")
                 },
                 i * 0.5
             );
         });
-
         // link pin 효과
         const linkSection = gsap.utils.toArray(".link");
         linkSection.forEach((panel) => {
@@ -75,6 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 pinSpacing: false,
             });
         })
+
+
+
+
+
+
+        // work addclass
 
 
 
@@ -132,7 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    const workItems = document.querySelectorAll('.work-item');
+    workItems.forEach((item) => {
+        item.addEventListener('mouseover', function () {
+            workItems.forEach((el) => el.classList.remove('active'));
+            item.classList.add('active');
+        });
 
+        item.addEventListener('mouseleave', function () {
+            item.classList.remove('active');
+        });
+    });
 
 
 });
