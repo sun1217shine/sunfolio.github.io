@@ -72,7 +72,17 @@ table {
   border-spacing: 0;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" -25, "opsz" 20;
+  vertical-align: middle;
+}
+
 .main-con {
+  word-break: keep-all;
+  width: 100%;
+}
+
+.sub-con {
   word-break: keep-all;
   width: 100%;
 }
@@ -94,12 +104,18 @@ section {
   height: 100%;
 }
 
-.tit {
+.main-tit {
+  display: flex;
+  align-items: center;
+  gap: 12px 24px;
+  padding-top: 10px;
+  border-top: 1px solid #000028;
   font-size: 64px;
   text-transform: uppercase;
 }
 
 .tit-sub {
+  font-weight: 400;
   font-size: 20px;
   color: #484856;
 }
@@ -438,29 +454,44 @@ section {
   }
 }
 
-.profile {
-  background-color: #fff;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+.header {
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  z-index: 999;
 }
-.profile .container {
-  flex-direction: row;
+.header .menu-ham span {
+  display: inline-block;
+}
+
+.profile {
+  display: flex;
   align-items: flex-start;
-  -moz-column-gap: 10%;
-       column-gap: 10%;
-  padding-top: 5rem;
+  justify-content: space-between;
+  background-color: #fff;
+  transition: 0.5s;
+  flex-wrap: nowrap;
+  margin: 0 auto;
 }
 .profile-head {
-  flex: 0 1 240px;
   display: flex;
+  flex: 0 1 100%;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   position: sticky;
-  top: 2rem;
   left: 0;
-  height: 100%;
+  top: 0;
+  z-index: 2;
+  padding: 30px;
+  height: 100vh;
+  background-color: #000028;
+  color: #fff;
+  transition: all 0.3s;
 }
 .profile-head .img {
+  max-width: 200px;
   margin-bottom: 24px;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -476,46 +507,90 @@ section {
   margin-bottom: 12px;
   font-size: 32px;
 }
-.profile .tag {
-  display: flex;
-  flex-wrap: wrap;
+.profile .tag p {
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 6px;
+  align-items: center;
+  row-gap: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 -10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  opacity: 0;
 }
 .profile .tag span {
-  padding: 6px 20px;
-  border-radius: 100px;
-  background-color: #E8E8E8;
-  font-size: 16px;
-  text-align: center;
+  margin-right: 6px;
 }
 .profile-body {
-  flex: 0 1 calc(90% - 240px);
+  position: absolute;
+  right: -100dvh;
+  z-index: 1;
+  padding: 20vh 80px 0;
+  transition: 0.4s;
 }
 .profile-box {
-  padding: 30px 60px;
-  border: 1px solid #7E7E94;
-  margin-bottom: 24px;
+  margin-bottom: 200px;
 }
 .profile-tit {
   margin-bottom: 24px;
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 900;
   text-transform: uppercase;
 }
+.profile.active {
+  max-width: 1920px;
+}
+.profile.active .profile-head {
+  flex: 0 1 25%;
+  background-color: #000080;
+}
+.profile.active .img {
+  max-width: 180px;
+}
+.profile.active .name {
+  margin-bottom: 24px;
+}
+.profile.active .tag p {
+  display: block;
+  padding: 6px 20px;
+  margin-bottom: 6px;
+  width: auto;
+  height: auto;
+}
+.profile.active .profile-body {
+  position: static;
+  flex: 0 1 75%;
+  width: 100%;
+}
 .profile .skill-item {
-  display: flex;
-  align-items: flex-start;
+  position: relative;
+  z-index: 1;
   margin-bottom: 40px;
 }
 .profile .skill-item:last-child {
   margin-bottom: 0;
 }
+.profile .skill-item::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 14px;
+  z-index: -1;
+  width: 100%;
+  height: 1px;
+  background-color: #000028;
+  content: "";
+}
 .profile .skill-head {
-  display: flex;
-  align-items: baseline;
-  flex: 0 1 240px;
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
+  padding-right: 10px;
+  background-color: #fff;
 }
 .profile .skill .icon {
   display: inline-block;
@@ -531,345 +606,11 @@ section {
      object-fit: cover;
 }
 .profile .skill-body {
-  flex: 1 1 10%;
+  padding-left: 38px;
+  margin-top: 6px;
 }
 .profile .skill .txt {
   font-size: 16px;
-  margin-bottom: 12px;
-}
-.profile .skill .progress {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #7E7E94;
-  font-size: 14px;
-}
-.profile .skill .progress .bar-0 .line {
-  width: 0%;
-}
-.profile .skill .progress .bar-1 .line {
-  width: 1%;
-}
-.profile .skill .progress .bar-2 .line {
-  width: 2%;
-}
-.profile .skill .progress .bar-3 .line {
-  width: 3%;
-}
-.profile .skill .progress .bar-4 .line {
-  width: 4%;
-}
-.profile .skill .progress .bar-5 .line {
-  width: 5%;
-}
-.profile .skill .progress .bar-6 .line {
-  width: 6%;
-}
-.profile .skill .progress .bar-7 .line {
-  width: 7%;
-}
-.profile .skill .progress .bar-8 .line {
-  width: 8%;
-}
-.profile .skill .progress .bar-9 .line {
-  width: 9%;
-}
-.profile .skill .progress .bar-10 .line {
-  width: 10%;
-}
-.profile .skill .progress .bar-11 .line {
-  width: 11%;
-}
-.profile .skill .progress .bar-12 .line {
-  width: 12%;
-}
-.profile .skill .progress .bar-13 .line {
-  width: 13%;
-}
-.profile .skill .progress .bar-14 .line {
-  width: 14%;
-}
-.profile .skill .progress .bar-15 .line {
-  width: 15%;
-}
-.profile .skill .progress .bar-16 .line {
-  width: 16%;
-}
-.profile .skill .progress .bar-17 .line {
-  width: 17%;
-}
-.profile .skill .progress .bar-18 .line {
-  width: 18%;
-}
-.profile .skill .progress .bar-19 .line {
-  width: 19%;
-}
-.profile .skill .progress .bar-20 .line {
-  width: 20%;
-}
-.profile .skill .progress .bar-21 .line {
-  width: 21%;
-}
-.profile .skill .progress .bar-22 .line {
-  width: 22%;
-}
-.profile .skill .progress .bar-23 .line {
-  width: 23%;
-}
-.profile .skill .progress .bar-24 .line {
-  width: 24%;
-}
-.profile .skill .progress .bar-25 .line {
-  width: 25%;
-}
-.profile .skill .progress .bar-26 .line {
-  width: 26%;
-}
-.profile .skill .progress .bar-27 .line {
-  width: 27%;
-}
-.profile .skill .progress .bar-28 .line {
-  width: 28%;
-}
-.profile .skill .progress .bar-29 .line {
-  width: 29%;
-}
-.profile .skill .progress .bar-30 .line {
-  width: 30%;
-}
-.profile .skill .progress .bar-31 .line {
-  width: 31%;
-}
-.profile .skill .progress .bar-32 .line {
-  width: 32%;
-}
-.profile .skill .progress .bar-33 .line {
-  width: 33%;
-}
-.profile .skill .progress .bar-34 .line {
-  width: 34%;
-}
-.profile .skill .progress .bar-35 .line {
-  width: 35%;
-}
-.profile .skill .progress .bar-36 .line {
-  width: 36%;
-}
-.profile .skill .progress .bar-37 .line {
-  width: 37%;
-}
-.profile .skill .progress .bar-38 .line {
-  width: 38%;
-}
-.profile .skill .progress .bar-39 .line {
-  width: 39%;
-}
-.profile .skill .progress .bar-40 .line {
-  width: 40%;
-}
-.profile .skill .progress .bar-41 .line {
-  width: 41%;
-}
-.profile .skill .progress .bar-42 .line {
-  width: 42%;
-}
-.profile .skill .progress .bar-43 .line {
-  width: 43%;
-}
-.profile .skill .progress .bar-44 .line {
-  width: 44%;
-}
-.profile .skill .progress .bar-45 .line {
-  width: 45%;
-}
-.profile .skill .progress .bar-46 .line {
-  width: 46%;
-}
-.profile .skill .progress .bar-47 .line {
-  width: 47%;
-}
-.profile .skill .progress .bar-48 .line {
-  width: 48%;
-}
-.profile .skill .progress .bar-49 .line {
-  width: 49%;
-}
-.profile .skill .progress .bar-50 .line {
-  width: 50%;
-}
-.profile .skill .progress .bar-51 .line {
-  width: 51%;
-}
-.profile .skill .progress .bar-52 .line {
-  width: 52%;
-}
-.profile .skill .progress .bar-53 .line {
-  width: 53%;
-}
-.profile .skill .progress .bar-54 .line {
-  width: 54%;
-}
-.profile .skill .progress .bar-55 .line {
-  width: 55%;
-}
-.profile .skill .progress .bar-56 .line {
-  width: 56%;
-}
-.profile .skill .progress .bar-57 .line {
-  width: 57%;
-}
-.profile .skill .progress .bar-58 .line {
-  width: 58%;
-}
-.profile .skill .progress .bar-59 .line {
-  width: 59%;
-}
-.profile .skill .progress .bar-60 .line {
-  width: 60%;
-}
-.profile .skill .progress .bar-61 .line {
-  width: 61%;
-}
-.profile .skill .progress .bar-62 .line {
-  width: 62%;
-}
-.profile .skill .progress .bar-63 .line {
-  width: 63%;
-}
-.profile .skill .progress .bar-64 .line {
-  width: 64%;
-}
-.profile .skill .progress .bar-65 .line {
-  width: 65%;
-}
-.profile .skill .progress .bar-66 .line {
-  width: 66%;
-}
-.profile .skill .progress .bar-67 .line {
-  width: 67%;
-}
-.profile .skill .progress .bar-68 .line {
-  width: 68%;
-}
-.profile .skill .progress .bar-69 .line {
-  width: 69%;
-}
-.profile .skill .progress .bar-70 .line {
-  width: 70%;
-}
-.profile .skill .progress .bar-71 .line {
-  width: 71%;
-}
-.profile .skill .progress .bar-72 .line {
-  width: 72%;
-}
-.profile .skill .progress .bar-73 .line {
-  width: 73%;
-}
-.profile .skill .progress .bar-74 .line {
-  width: 74%;
-}
-.profile .skill .progress .bar-75 .line {
-  width: 75%;
-}
-.profile .skill .progress .bar-76 .line {
-  width: 76%;
-}
-.profile .skill .progress .bar-77 .line {
-  width: 77%;
-}
-.profile .skill .progress .bar-78 .line {
-  width: 78%;
-}
-.profile .skill .progress .bar-79 .line {
-  width: 79%;
-}
-.profile .skill .progress .bar-80 .line {
-  width: 80%;
-}
-.profile .skill .progress .bar-81 .line {
-  width: 81%;
-}
-.profile .skill .progress .bar-82 .line {
-  width: 82%;
-}
-.profile .skill .progress .bar-83 .line {
-  width: 83%;
-}
-.profile .skill .progress .bar-84 .line {
-  width: 84%;
-}
-.profile .skill .progress .bar-85 .line {
-  width: 85%;
-}
-.profile .skill .progress .bar-86 .line {
-  width: 86%;
-}
-.profile .skill .progress .bar-87 .line {
-  width: 87%;
-}
-.profile .skill .progress .bar-88 .line {
-  width: 88%;
-}
-.profile .skill .progress .bar-89 .line {
-  width: 89%;
-}
-.profile .skill .progress .bar-90 .line {
-  width: 90%;
-}
-.profile .skill .progress .bar-91 .line {
-  width: 91%;
-}
-.profile .skill .progress .bar-92 .line {
-  width: 92%;
-}
-.profile .skill .progress .bar-93 .line {
-  width: 93%;
-}
-.profile .skill .progress .bar-94 .line {
-  width: 94%;
-}
-.profile .skill .progress .bar-95 .line {
-  width: 95%;
-}
-.profile .skill .progress .bar-96 .line {
-  width: 96%;
-}
-.profile .skill .progress .bar-97 .line {
-  width: 97%;
-}
-.profile .skill .progress .bar-98 .line {
-  width: 98%;
-}
-.profile .skill .progress .bar-99 .line {
-  width: 99%;
-}
-.profile .skill .progress .bar-100 .line {
-  width: 100%;
-}
-.profile .skill .progress .bar {
-  position: relative;
-  width: 100%;
-  height: 6px;
-  border-radius: 100px;
-  background-color: #E8E8E8;
-}
-.profile .skill .progress .line {
-  position: absolute;
-  height: 100%;
-  border-radius: 100px;
-  background-color: #4747D4;
-}
-.profile .skill .progress .dot {
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 4px solid #4747D4;
-  background-color: #fff;
 }
 .profile .timeline-list {
   display: flex;
@@ -927,23 +668,32 @@ section {
 .profile .timeline .date {
   margin-bottom: 10px;
   color: #7E7E94;
+  font-size: 16px;
 }
 .profile .timeline .place {
   margin-bottom: 24px;
-  color: #7E7E94;
-  font-size: 24px;
+  color: #484856;
 }
 .profile .timeline .txt {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
+.profile .career-list {
+  flex: 1 1 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.profile .career-item {
+  background-color: #f7f7f7;
+  padding: 20px 24px;
+}
+.profile .career .client {
+  font-size: 16px;
+  color: #484856;
+  margin-bottom: 6px;
+}
 @media (max-width: 1920px) {
-  .profile-tit {
-    font-size: 48px;
-  }
-  .profile .skill-head {
-    flex: 0 1 200px;
-  }
   .profile .timeline-item:nth-child(odd) {
     padding-right: 32px;
   }
@@ -963,14 +713,11 @@ section {
     padding: 6px 16px;
   }
   .profile-box {
-    padding: 24px 40px;
+    min-height: 0;
+    margin-bottom: 100px;
   }
   .profile-tit {
     font-size: 36px;
-  }
-  .profile .skill-head {
-    flex: 0 1 160px;
-    font-size: 16px;
   }
   .profile .timeline-list {
     row-gap: 50px;
@@ -989,11 +736,10 @@ section {
     height: 16px;
   }
   .profile .timeline .date {
-    margin-bottom: 0;
-    font-size: 16px;
+    margin-bottom: 6px;
   }
   .profile .timeline .place {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 18px;
   }
   .profile .timeline .txt {
@@ -1002,14 +748,22 @@ section {
 }
 @media (max-width: 992px) {
   .profile {
+    display: block;
     box-shadow: none;
   }
   .profile .container {
     display: block;
   }
   .profile-head {
-    position: static;
-    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 2;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    border-radius: 16px;
   }
   .profile-head .img {
     width: 140px;
@@ -1022,6 +776,12 @@ section {
   .profile .tag {
     flex: 0 1 100%;
   }
+  .profile-body {
+    z-index: 1;
+  }
+  .profile-tit {
+    font-size: 32px;
+  }
   .profile .timeline-list {
     row-gap: 24px;
   }
@@ -1030,10 +790,21 @@ section {
   }
   .profile .timeline .place {
     margin-bottom: 12px;
-    font-size: inherit;
   }
   .profile .timeline .txt {
     font-size: inherit;
+  }
+  .profile .career-list {
+    gap: 16px;
+  }
+  .profile .career .client {
+    font-size: 14px;
+  }
+  .profile .profile-head {
+    display: none;
+  }
+  .profile.active .profile-head {
+    display: flex;
   }
 }
 @media (max-width: 768px) {
@@ -1047,7 +818,7 @@ section {
     width: 100px;
   }
   .profile-box {
-    padding: 20px 30px;
+    margin-bottom: 40px;
   }
   .profile-tit {
     font-size: 24px;
@@ -1056,20 +827,9 @@ section {
     flex-direction: column;
     margin-bottom: 28px;
   }
-  .profile .skill-head {
-    flex: none;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .profile .skill-head br {
-    display: none;
-  }
   .profile .skill .icon {
     width: 26px;
     height: 26px;
-  }
-  .profile .skill .txt {
-    margin-bottom: 10px;
   }
   .profile .timeline-item {
     flex: 0 1 100%;
@@ -1082,39 +842,62 @@ section {
   }
 }
 
-.career {
+.work {
   padding-top: 10rem;
   background-color: #fff;
 }
-.career .container {
-  flex-direction: row;
-  align-items: flex-start;
-  -moz-column-gap: 10%;
-       column-gap: 10%;
+.work-body {
+  display: flex;
+  gap: 4%;
 }
-.career-tit {
+.work-img {
   position: sticky;
-  top: 2rem;
-  font-size: 52px;
-  font-weight: 900;
+  top: 1rem;
+  flex: 0 1 800px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
 }
-.career-list {
-  flex: 1 1 10%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px 40px;
+.work-img a {
+  display: block;
 }
-.career-item {
-  border-top: 1px solid #000028;
-  padding-top: 30px;
+.work-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.career .client {
-  font-size: 22px;
+.work-list {
+  flex: 0 1 calc(96% - 800px);
 }
-.career .tit {
-  font-size: 22px;
-  margin-bottom: 40px;
+.work-item {
+  border-bottom: 1px solid #7E7E94;
 }
-.career .txt {
-  color: #7E7E94;
+.work-item .client {
+  font-weight: 500;
+  font-size: 32px;
+  color: #484856;
+}
+.work-item .info {
+  display: none;
+}
+.work-item .site-btn {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+.work-item.active {
+  border-bottom-width: 3px;
+}
+.work-item.active .client {
+  font-weight: 600;
+  font-size: 42px;
+}
+.work-item.active .site-btn {
+  width: auto;
+}
+.work-item.active .info {
+  display: block;
+}
+.design {
+  padding-top: 10rem;
 }
