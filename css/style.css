@@ -82,6 +82,10 @@ table {
   width: 100%;
 }
 
+.main-con .container {
+  height: 100vh;
+}
+
 .sub-con {
   word-break: keep-all;
   width: 100%;
@@ -127,12 +131,14 @@ section {
   }
 }
 @media (max-width: 992px) {
+  .main-con section {
+    min-height: 100vh;
+  }
   section {
     min-height: 0;
   }
   .container {
     padding: 0 40px;
-    height: auto;
   }
 }
 @media (max-width: 768px) {
@@ -149,6 +155,10 @@ section {
   animation: height-up 0.5s ease 1 normal both;
 }
 
+.height-down {
+  animation: height-down 0.3s ease 1 normal both;
+}
+
 @keyframes height-up {
   0% {
     transform: scaleY(0);
@@ -156,6 +166,16 @@ section {
   }
   100% {
     transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+@keyframes height-down {
+  0% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
     transform-origin: bottom;
   }
 }
@@ -168,15 +188,6 @@ section {
     transform: scale(1.2);
     opacity: 0;
   }
-}
-.visual {
-  background-color: #fff;
-  height: 200vh;
-  overflow-x: hidden;
-}
-.visual .container {
-  justify-content: flex-start;
-  padding-top: 5rem;
 }
 .visual .txt-area {
   display: flex;
@@ -207,7 +218,6 @@ section {
 @media (max-width: 992px) {
   .visual {
     padding: 40px 0;
-    height: auto;
   }
   .visual .txt-area {
     width: auto;
@@ -227,11 +237,6 @@ section {
   }
 }
 
-.link {
-  background-color: #fff;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
-  overflow-x: hidden;
-}
 .link .container {
   gap: 30px;
 }
@@ -849,22 +854,6 @@ section {
 .work-body {
   display: flex;
   gap: 4%;
-}
-.work-img {
-  position: sticky;
-  top: 1rem;
-  flex: 0 1 800px;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-.work-img a {
-  display: block;
-}
-.work-img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .work-list {
   flex: 0 1 calc(96% - 800px);
