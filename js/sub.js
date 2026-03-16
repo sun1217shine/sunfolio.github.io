@@ -1,29 +1,10 @@
-
 const mm = gsap.matchMedia();
 
-// work pin
-const workItem = gsap.utils.toArray(".work-item");
-
-workItem.forEach((item, i) => {
-    gsap.set(item, { zIndex: i });
-    // 2. 카드 고정 및 쌓기 효과
-    ScrollTrigger.create({
-        trigger: item,
-        start: "top top",      // 화면 상단에 닿으면 고정
-        endTrigger: ".work-list", // 전체 리스트가 끝날 때까지 고정 유지 (선택사항)
-        end: "bottom bottom",
-        pin: true,             // 핵심: 여기서 고정!
-        pinSpacing: false,     // 다음 카드가 빈 공간 없이 올라오게 함
-        scrub: true,
-        onEnter: () => item.classList.add("active"),
-        onLeaveBack: () => item.classList.remove("active"),
-    });
-
-});
 
 
 
 // profile /////////////////////////////////////////////////////////
+// 원형 효과
 const circleDraw = gsap.timeline({
     scrollTrigger: {
         trigger: ".profile",
@@ -33,8 +14,6 @@ const circleDraw = gsap.timeline({
     }
 });
 circleDraw.to('.profile .circle-draw', { strokeDashoffset: 0, stagger: 0.02 });
-
-
 gsap.set('.profile .circle-inner', { yPercent: 150, filter: "blur(10px)", autoAlpha: 0 });
 gsap.to('.profile  .circle-inner', 1,
     {
@@ -55,28 +34,27 @@ gsap.to('.profile  .circle-inner', 1,
 
 
 
-
-
-
-
-
-
-
-
-// skill progressbar 효과
-const progressBars = gsap.utils.toArray(".progress .line");
-progressBars.forEach((item) => {
-    gsap.from(item, {
-        width: 0,
-        duration: 1,
-        scrollTrigger: {
-            trigger: ".profile",
-            start: "top top",
-            end: "10% 10%",
-            scrub: 1.5
-        }
+// work /////////////////////////////////////////////////////////
+// pin
+const workItem = gsap.utils.toArray(".work-item");
+workItem.forEach((item, i) => {
+    gsap.set(item, { zIndex: i });
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top top",
+        endTrigger: ".work-list",
+        end: "bottom bottom",
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+        onEnter: () => item.classList.add("active"),
+        onLeaveBack: () => item.classList.remove("active"),
     });
+
 });
+
+
+
 
 
 
@@ -86,6 +64,21 @@ progressBars.forEach((item) => {
 
 // PC /////////////////////////////////////////////////////////
 mm.add("(min-width: 993px)", () => {
+
+    // 전체 pin
+    const pinItem = gsap.utils.toArray(".pin");
+    pinItem.forEach((item, i) => {
+        gsap.set(item, { zIndex: i });
+        ScrollTrigger.create({
+            trigger: item,
+            start: "top top",
+            endTrigger: ".career",
+            end: "bottom bottom",
+            pin: true,
+            pinSpacing: true,
+            scrub:.5,
+        });
+    });
 
 
 
