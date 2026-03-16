@@ -13,6 +13,11 @@
 </head>
 
 <body>
+    <div class="cursor">
+        <div class="txt">scroll down</div>
+        <div class="txt">scroll down</div>
+        <div class="txt"><span>scroll down</span></div>
+    </div>
     <header class="header">
         <button class="menu-ham" type="button">
             <span></span>
@@ -29,7 +34,7 @@
 
     <div class="sub-con">
         <!-- profile -->
-        <section class="profile" id="profile">
+        <section class="profile pin" id="profile">
             <div class="container">
                 <div class="profile-name">
                     <span data-content="Why">Why </span>SeonHyeJIn?
@@ -93,15 +98,15 @@
                     </li>
                 </ul>
             </div>
-
         </section>
         <!-- // profile -->
 
-        <!--
-            
-            <div class="profile-body">
-                <div class="profile-box skill">
-                    <h3 class="profile-tit">skill</h3>
+
+        <!-- induction -->
+        <section class="induction pin">
+            <div class="container">
+                <div class="skill">
+                    <h3 class="induction-tit"><span>skill</span></h3>
                     <ul class="skill-list">
                         <li class="skill-item">
                             <div class="skill-head">
@@ -112,19 +117,25 @@
                             </div>
                         </li>
                         <li class="skill-item">
-                            <div class="skill-head"><div class="icon"><img src="/img/skill-icon02.svg" alt="xd"></div>XD</div>
+                            <div class="skill-head">
+                                <div class="icon"><img src="/img/skill-icon02.svg" alt="xd"></div>XD
+                            </div>
                             <div class="skill-body">
                                 <p class="txt">홈페이지 시안, UI/UX 디자인, interative 효과, 협업</p>
                             </div>
                         </li>
                         <li class="skill-item">
-                            <div class="skill-head"><div class="icon"><img src="/img/skill-icon04.svg" alt=""></div>HTML, CSS,  Javascript</div>
+                            <div class="skill-head">
+                                <div class="icon"><img src="/img/skill-icon04.svg" alt=""></div>HTML, CSS, Javascript
+                            </div>
                             <div class="skill-body">
                                 <p class="txt">크로스브라우징, ES6, 웹호환성, 웹접근성, Jquery plugin을 이용한 동적 인터랙션</p>
                             </div>
                         </li>
                         <li class="skill-item">
-                            <div class="skill-head"><div class="icon"><img src="/img/skill-icon11.svg"></div>기타 사용 가능한 프로그램</div>
+                            <div class="skill-head">
+                                <div class="icon"><img src="/img/skill-icon11.svg"></div>기타 사용 가능한 프로그램
+                            </div>
                             <div class="skill-body">
                                 <div class="icon"><img src="/img/skill-icon03.svg" alt="illust"></div>
                                 <div class="icon"><img src="/img/skill-icon06.svg" alt="pdf"></div>
@@ -134,10 +145,11 @@
                             </div>
                         </li>
                     </ul>
-
                 </div>
-                <div class="profile-box timeline">
-                    <h3 class="profile-tit">timeline</h3>
+
+
+                <div class="timeline">
+                    <h3 class="induction-tit"><span>timeline</span></h3>
                     <ul class="timeline-list">
                         <li class="timeline-item">
                             <div class="dot"></div>
@@ -165,54 +177,60 @@
                         </li>
                     </ul>
                 </div>
-                <div class="profile-box career">
-                    <h3 class="profile-tit">주요 참여 프로젝트</h3>
-                    <ul class="career-list">
-                        <li class="career-item">
-                            <p class="client">김해대학교</p>
-                            <p class="tit">학생 정보전달시스템 다양화 구축</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">부산시설공단</p>
-                            <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">울산대학교</p>
-                            <p class="tit">글로컬대학 실행계획서에 따른 전산시스템 고도화</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">기술보증기금</p>
-                            <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">부산대학교</p>
-                            <p class="tit">차세대 스마트 교육정보시스템 디자인 개편 및 기능 개선</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">부산광역시 탄소중립지원센터</p>
-                            <p class="tit">홈페이지 디자인 개편 및 기능 개선</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">부산테크노파크</p>
-                            <p class="tit">BIP통합정보관리시스템 구축</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">부산연구원</p>
-                            <p class="tit">데이터 공유 활성을 위한 홈페이지 고도화 사업</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">서울주택도시공사, 환경교육포털, 극지연구소, 한국자산관리공단</p>
-                            <p class="tit">웹진 제안서 디자인</p>
-                        </li>
-                        <li class="career-item">
-                            <p class="client">경남대표홈페이지</p>
-                            <p class="tit">고도화 </p>
-                        </li>
-                    </ul>
+
+                <div class="career">
+                        <h3 class="induction-tit"><span>주요 참여 프로젝트</span></h3>
+                        <ul class="career-list">
+                            <li class="career-item">
+                                <p class="client">김해대학교</p>
+                                <p class="tit">학생 정보전달시스템 다양화 구축</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">부산시설공단</p>
+                                <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">울산대학교</p>
+                                <p class="tit">글로컬대학 실행계획서에 따른 전산시스템 고도화</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">기술보증기금</p>
+                                <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">부산대학교</p>
+                                <p class="tit">차세대 스마트 교육정보시스템 디자인 개편 및 기능 개선</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">부산광역시 탄소중립지원센터</p>
+                                <p class="tit">홈페이지 디자인 개편 및 기능 개선</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">부산테크노파크</p>
+                                <p class="tit">BIP통합정보관리시스템 구축</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">부산연구원</p>
+                                <p class="tit">데이터 공유 활성을 위한 홈페이지 고도화 사업</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">서울주택도시공사, 환경교육포털, 극지연구소, 한국자산관리공단</p>
+                                <p class="tit">웹진 제안서 디자인</p>
+                            </li>
+                            <li class="career-item">
+                                <p class="client">경남대표홈페이지</p>
+                                <p class="tit">고도화 </p>
+                            </li>
+                        </ul>
                 </div>
             </div>
+        </section>
+        <!-- // induction -->
 
-            -->
+
+
+
+
 
         <!-- work -->
         <!-- <section class="work" id="work">
@@ -311,6 +329,8 @@
 
 
     </div>
+
+
 
 
 
