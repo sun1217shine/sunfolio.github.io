@@ -82,19 +82,21 @@ table {
   width: 100%;
 }
 
-.main-con .container {
-  height: 100vh;
-}
-
 .sub-con {
   word-break: keep-all;
   width: 100%;
 }
+.sub-con .pin {
+  box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.5);
+}
+.sub-con .container {
+  flex-direction: row;
+  justify-content: flex-start;
+}
 
 section {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .container {
@@ -106,6 +108,7 @@ section {
   width: 100%;
   max-width: 1920px;
   height: 100%;
+  min-height: 100vh;
 }
 
 .main-tit {
@@ -113,6 +116,7 @@ section {
   align-items: center;
   gap: 12px 24px;
   padding-top: 10px;
+  margin-top: 5rem;
   border-top: 1px solid #000028;
   font-size: 64px;
   text-transform: uppercase;
@@ -122,6 +126,28 @@ section {
   font-weight: 400;
   font-size: 20px;
   color: #484856;
+}
+
+.cursor {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.cursor .txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 50px;
+  font-weight: 700;
+  -webkit-text-stroke: 1px #FFFF12;
+  color: transparent;
+  white-space: nowrap;
+}
+.cursor .txt span {
+  color: #FFFF12;
+  -webkit-text-stroke: 0;
 }
 
 @media (max-width: 1400px) {
@@ -139,6 +165,9 @@ section {
   }
   .container {
     padding: 0 40px;
+  }
+  .cursor {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -479,6 +508,7 @@ section {
   position: sticky;
   top: 0;
   gap: 10%;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding-top: 10px;
@@ -573,129 +603,150 @@ section {
   }
 }
 @media (max-width: 992px) {
+  .profile .container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    -moz-column-gap: 10%;
+         column-gap: 10%;
+  }
   .profile-name {
     font-size: 60px;
     text-align: center;
   }
+  .profile-name span::before {
+    -webkit-text-stroke: 2px #fff;
+  }
+  .profile-list {
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 0 1 50%;
+  }
+  .profile-item {
+    flex: 0 1 40%;
+    margin: -10px;
+  }
+  .profile-item:nth-child(odd) {
+    justify-content: flex-end;
+  }
+  .profile-item:nth-child(even) {
+    justify-content: flex-start;
+  }
   .profile-item .circle .circle-svg {
-    width: 160px;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
   .profile-name {
     font-size: 48px;
   }
+  .profile-item .circle-inner .txt {
+    margin: 16px 0 4px;
+    font-size: 14px;
+  }
+  .profile-item .circle-inner .tit {
+    font-size: inherit;
+  }
 }
 
-.profile-body {
-  position: absolute;
-  right: -100dvh;
-  z-index: 1;
-  padding: 0 80px 0;
-  transition: 0.4s;
-}
-.profile-box {
-  height: 100vh;
-  padding-top: 10vh;
+.induction {
   background-color: #fff;
 }
-.profile-tit {
-  margin-bottom: 24px;
-  font-size: 42px;
-  font-weight: 900;
+.induction .container {
+  flex-direction: column;
+}
+.induction-tit {
+  flex: 0 1 20%;
+  height: 90%;
+  position: sticky;
+  left: 0;
+  top: 5%;
+  margin-right: 5%;
+  background-color: #000028;
+  overflow: hidden;
+}
+.induction-tit span {
+  position: absolute;
+  top: -10px;
+  right: -18px;
+  line-height: 1;
+  color: #fff;
+  font-size: 7rem;
   text-transform: uppercase;
+  writing-mode: sideways-lr;
 }
-.profile.active {
-  max-width: 1920px;
+
+.skill {
+  display: flex;
+  background-color: #fff;
 }
-.profile.active .profile-head {
-  flex: 0 1 25%;
-  background-color: #000080;
+.skill-list {
+  padding-top: 10%;
 }
-.profile.active .img {
-  max-width: 180px;
-}
-.profile.active .name {
-  margin-bottom: 24px;
-}
-.profile.active .tag p {
-  display: block;
-  padding: 6px 20px;
-  margin-bottom: 6px;
-  width: auto;
-  height: auto;
-}
-.profile.active .profile-body {
-  position: static;
-  flex: 0 1 75%;
-  width: 75%;
-}
-.profile.active .profile-box {
-  left: 0 !important;
-  position: absolute !important;
-}
-.profile .skill-item {
-  position: relative;
-  z-index: 1;
+.skill-item {
+  display: flex;
   margin-bottom: 40px;
 }
-.profile .skill-item:last-child {
-  margin-bottom: 0;
-}
-.profile .skill-item::after {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 14px;
-  z-index: -1;
-  width: 100%;
-  height: 1px;
-  background-color: #000028;
-  content: "";
-}
-.profile .skill-head {
+.skill-head {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding-right: 10px;
   background-color: #fff;
 }
-.profile .skill .icon {
+.skill .icon {
   display: inline-block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   overflow: hidden;
 }
-.profile .skill img {
+.skill img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.profile .skill-body {
+.skill-body {
   padding-left: 38px;
   margin-top: 6px;
 }
-.profile .skill .txt {
+.skill .txt {
   font-size: 16px;
 }
-.profile .timeline-list {
+@media (max-width: 768px) {
+  .skill-item {
+    flex-direction: column;
+    margin-bottom: 28px;
+  }
+  .skill .icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.timeline {
+  display: flex;
+  background-color: #fff;
+}
+.timeline-list {
   display: flex;
   flex-wrap: wrap;
   row-gap: 60px;
 }
-.profile .timeline-item {
+.timeline-item {
   position: relative;
   flex: 0 1 50%;
 }
-.profile .timeline-item:nth-child(odd) {
+.timeline-item:nth-child(odd) {
   padding-right: 40px;
 }
-.profile .timeline-item:nth-child(even) {
+.timeline-item:nth-child(even) {
   padding-left: 40px;
 }
-.profile .timeline-item::before {
+.timeline-item::before {
   display: block;
   position: absolute;
   left: 0;
@@ -705,13 +756,13 @@ section {
   background-color: #000028;
   content: "";
 }
-.profile .timeline .dot {
+.timeline .dot {
   position: relative;
   width: 18px;
   height: 18px;
   margin-bottom: 6px;
 }
-.profile .timeline .dot::before {
+.timeline .dot::before {
   display: block;
   position: absolute;
   left: 50%;
@@ -723,7 +774,7 @@ section {
   background-color: #000028;
   content: "";
 }
-.profile .timeline .dot::after {
+.timeline .dot::after {
   display: block;
   position: absolute;
   width: 100%;
@@ -733,34 +784,40 @@ section {
   content: "";
   animation: scale-up 1.5s linear infinite;
 }
-.profile .timeline .date {
+.timeline .date {
   margin-bottom: 10px;
   color: #7E7E94;
   font-size: 16px;
 }
-.profile .timeline .place {
+.timeline .place {
   margin-bottom: 24px;
   color: #484856;
 }
-.profile .timeline .txt {
+.timeline .txt {
   font-size: 20px;
   font-weight: 600;
 }
-.profile .career-list {
+
+.career {
+  display: flex;
+  background-color: #fff;
+}
+.career-list {
   flex: 1 1 10%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
-.profile .career-item {
+.career-item {
   background-color: #f7f7f7;
   padding: 20px 24px;
 }
-.profile .career .client {
+.career .client {
   font-size: 16px;
   color: #484856;
   margin-bottom: 6px;
 }
+
 @media (max-width: 1920px) {
   .profile .timeline-item:nth-child(odd) {
     padding-right: 32px;
@@ -770,16 +827,6 @@ section {
   }
 }
 @media (max-width: 1400px) {
-  .profile .container {
-    -moz-column-gap: 5%;
-         column-gap: 5%;
-  }
-  .profile-head {
-    flex: 0 1 200px;
-  }
-  .profile .tag span {
-    padding: 6px 16px;
-  }
   .profile-box {
     min-height: 0;
     margin-bottom: 100px;
@@ -819,34 +866,6 @@ section {
     display: block;
     box-shadow: none;
   }
-  .profile .container {
-    display: block;
-  }
-  .profile-head {
-    flex-direction: row;
-    justify-content: center;
-    z-index: 2;
-    left: 5%;
-    top: 5%;
-    width: 90%;
-    height: auto;
-    padding: 20px;
-    border-radius: 16px;
-  }
-  .profile-head .img {
-    width: 140px;
-    margin-bottom: 16px;
-  }
-  .profile .name {
-    margin-bottom: 10px;
-    font-size: 24px;
-  }
-  .profile .tag {
-    flex: 0 1 100%;
-  }
-  .profile-body {
-    z-index: 1;
-  }
   .profile-tit {
     font-size: 32px;
   }
@@ -868,36 +887,13 @@ section {
   .profile .career .client {
     font-size: 14px;
   }
-  .profile .profile-head {
-    display: none;
-  }
-  .profile.active .profile-head {
-    display: flex;
-  }
 }
 @media (max-width: 768px) {
-  .profile .container {
-    padding-top: 0;
-  }
-  .profile-head {
-    margin-bottom: 30px;
-  }
-  .profile-head .img {
-    width: 100px;
-  }
   .profile-box {
     margin-bottom: 40px;
   }
   .profile-tit {
     font-size: 24px;
-  }
-  .profile .skill-item {
-    flex-direction: column;
-    margin-bottom: 28px;
-  }
-  .profile .skill .icon {
-    width: 26px;
-    height: 26px;
   }
   .profile .timeline-item {
     flex: 0 1 100%;
