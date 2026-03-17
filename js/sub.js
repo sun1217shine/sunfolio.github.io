@@ -1,8 +1,5 @@
 const mm = gsap.matchMedia();
 
-
-
-
 // profile /////////////////////////////////////////////////////////
 // 원형 효과
 const circleDraw = gsap.timeline({
@@ -32,8 +29,6 @@ gsap.to('.profile  .circle-inner', 1,
 
 
 
-
-
 // work /////////////////////////////////////////////////////////
 // pin
 const workItem = gsap.utils.toArray(".work-item");
@@ -50,14 +45,7 @@ workItem.forEach((item, i) => {
         onEnter: () => item.classList.add("active"),
         onLeaveBack: () => item.classList.remove("active"),
     });
-
 });
-
-
-
-
-
-
 
 
 
@@ -72,12 +60,24 @@ mm.add("(min-width: 993px)", () => {
         ScrollTrigger.create({
             trigger: item,
             start: "top top",
-            endTrigger: ".career",
+            endTrigger: ".induction",
             end: "bottom bottom",
             pin: true,
-            pinSpacing: true,
-            scrub:.5,
+            pinSpacing: false,
+            scrub: .5,
         });
+    });
+
+    // skill 
+    gsap.to(".skill-body", {
+        width: "100%",
+        duration: 3, 
+        scrollTrigger: {
+            trigger: ".induction", 
+            start: "top top", 
+            end: "center top+=1", 
+            scrub: true, 
+        }
     });
 
 
