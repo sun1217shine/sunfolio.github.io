@@ -64,20 +64,25 @@ mm.add("(min-width: 993px)", () => {
             end: "bottom bottom",
             pin: true,
             pinSpacing: false,
-            scrub: .5,
+            scrub: 1,
         });
     });
 
     // skill 
-    gsap.to(".skill-body", {
-        width: "100%",
-        duration: 3, 
-        scrollTrigger: {
-            trigger: ".induction", 
-            start: "top top", 
-            end: "center top+=1", 
-            scrub: true, 
-        }
+    const introTit = document.querySelectorAll('.induction-tit span');
+    
+    introTit.forEach((item) => {
+        gsap.to(item, {
+            paddingLeft: 100, 
+            duration: 1.5,  
+            scrollTrigger: {
+                trigger: item,
+                start: "top+=1 top",
+                end: "top+=2 top+=1",
+                scrub: 1, 
+                markers:true
+            }
+        });
     });
 
 
