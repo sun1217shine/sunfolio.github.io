@@ -24,7 +24,7 @@ workItem.forEach((item, i) => {
         end: "bottom bottom",
         pin: true,
         pinSpacing: false,
-        scrub: true,
+        scrub: 1,
         onEnter: () => item.classList.add("active"),
         onLeaveBack: () => item.classList.remove("active"),
     });
@@ -33,8 +33,7 @@ workItem.forEach((item, i) => {
 
 // PC /////////////////////////////////////////////////////////
 mm.add("(min-width: 993px)", () => {
-
-    // skill 
+    // introduction title 패딩 효과
     const introTit = document.querySelectorAll('.induction-tit span');
     introTit.forEach((item) => {
         gsap.to(item, {
@@ -42,9 +41,9 @@ mm.add("(min-width: 993px)", () => {
             duration: 1.5,  
             scrollTrigger: {
                 trigger: item,
-                start: "top+=1 top",
-                end: "top+=2 top+=1",
-                scrub: 1, 
+                start: "center bottom",
+                end: "top top",
+                scrub: 1,
                 markers:true
             }
         });
@@ -61,12 +60,6 @@ mm.add("(min-width: 993px)", () => {
 
 
     return () => { };
-
-
-
-
-
-
 });
 
 // mobile /////////////////////////////////////////////////////////

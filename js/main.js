@@ -42,6 +42,6 @@ gsap.to(linkList, {
         trigger: linkSection,
         start: "top bottom",
         end: "top top",
-        scrub: 1.5,
+        scrub: 1,
     }
 });

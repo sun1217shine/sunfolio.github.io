@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     txt.textContent = "scroll down";
                 }
             });
-            gsap.to(".cursor .txt", { duration: 0.3 });
+            gsap.to(".cursor .txt", { duration: .3 });
         });
     });
 });
