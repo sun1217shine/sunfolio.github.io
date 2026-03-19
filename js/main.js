@@ -1,12 +1,13 @@
 // visual /////////////////////////////////////////////////////////
 const visualSection = document.querySelector(".visual");
 const txtAreas = gsap.utils.toArray(".txt-area", visualSection);
+
 // visual scroll
 const visualTl = gsap.timeline({
     scrollTrigger: {
         trigger: visualSection,
         start: "top+=1 top",
-        end: "+=" + (txtAreas.length * 100) + "%",
+        end: "+=" + (txtAreas.length * 50) + "%",
         pin: true,
         pinSpacing: true,
         scrub: .5,

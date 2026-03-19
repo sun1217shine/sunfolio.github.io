@@ -1,32 +1,15 @@
 const mm = gsap.matchMedia();
 
 // profile /////////////////////////////////////////////////////////
+const profileSection = document.querySelector('.profile');
+const profileItem = gsap.utils.toArray(".profile-item", profileSection);
+const profileTl = gsap.timeline();
+
+// why 텍스트 효과
+profileTl.to(".profile-name span",{width:'auto', duration:1});
+
 // 원형 효과
-const circleDraw = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".profile",
-        start: "24% 15%",
-        end: "60% 15%",
-        scrub: 1,
-    }
-});
-circleDraw.to('.profile .circle-draw', { strokeDashoffset: 0, stagger: 0.02 });
-gsap.set('.profile .circle-inner', { yPercent: 150, filter: "blur(10px)", autoAlpha: 0 });
-gsap.to('.profile  .circle-inner', 1,
-    {
-        yPercent: -50,
-        filter: "blur(0px)",
-        autoAlpha: 1,
-        scrollTrigger: {
-            trigger: ".profile",
-            start: "15% 15%",
-            end: "22% 15%",
-            scrub: 1,
-        }
-    });
-
-
-
+profileItem.forEach((item, j) => { profileTl.to(item, {opacity:1}, j * .5);},"+=1");
 
 
 // work /////////////////////////////////////////////////////////
@@ -36,7 +19,7 @@ workItem.forEach((item, i) => {
     gsap.set(item, { zIndex: i });
     ScrollTrigger.create({
         trigger: item,
-        start: "top top",
+        start: "top-=1 top",
         endTrigger: ".work-list",
         end: "bottom bottom",
         pin: true,
@@ -48,29 +31,11 @@ workItem.forEach((item, i) => {
 });
 
 
-
-
 // PC /////////////////////////////////////////////////////////
 mm.add("(min-width: 993px)", () => {
 
-    // 전체 pin
-    const pinItem = gsap.utils.toArray(".pin");
-    pinItem.forEach((item, i) => {
-        gsap.set(item, { zIndex: i });
-        ScrollTrigger.create({
-            trigger: item,
-            start: "top top",
-            endTrigger: ".induction",
-            end: "bottom bottom",
-            pin: true,
-            pinSpacing: false,
-            scrub: 1,
-        });
-    });
-
     // skill 
     const introTit = document.querySelectorAll('.induction-tit span');
-    
     introTit.forEach((item) => {
         gsap.to(item, {
             paddingLeft: 100, 

@@ -48,8 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(".cursor .txt", { duration: 0.3 });
         });
     });
-
 });
-
-
-
