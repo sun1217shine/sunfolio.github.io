@@ -22,7 +22,7 @@ workItem.forEach((item, i) => {
         start: "top-=1 top",
         endTrigger: ".work-list",
         end: "bottom bottom",
-        pin: true,
+        pin: true,W
         pinSpacing: false,
         scrub: 1,
         onEnter: () => item.classList.add("active"),
