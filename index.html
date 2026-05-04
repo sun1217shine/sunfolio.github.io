@@ -5,99 +5,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, noscroll">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,-25" />
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="shortcut icon" href="/img/favicon.ico">  -->
     <title>Document</title>
 </head>
 
+<header class="header">
+    <button class="menu-ham" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="gnb">
+        <li class="menu"><a href="/index.html">intro</a></li>
+        <li class="menu"><a href="#profile">profile</a></li>
+        <li class="menu"><a href="#work">work</a></li>
+        <li class="menu"><a href="#design">design</a></li>
+    </ul>
+</header>
+
 <body>
-    <div class="cursor">
-        <div class="txt">scroll down</div>
-        <div class="txt">scroll down</div>
-        <div class="txt"><span>scroll down</span></div>
-    </div>
-    <main class="main-con">
-        <!-- visual -->
-        <section class="visual">
-            <div class="container">
-                <div class="visual-inner">
-                    <div class="txt-area">
-                        <p>안녕하세요,</p>
-                        <p class="txt-item"><strong>6년 차</strong></p>
-                        <p>웹디자이너<span>입니다.</span></p>
-                    </div>
-                    <div class="txt-area">
-                        <p class="txt-item"><strong>심미적인</strong></p>
-                        <p>디자인<span>을 넘어</span></p>
-                    </div>
-                    <div class="txt-area">
-                        <p class="txt-item"><strong>웹접근성을</strong> 준수하는</p>
-                        <p><strong>퍼블리싱 </strong><span>실력을 바탕으로</span></p>
+    <!-- intro -->
+    <section class="intro">
+        <div class="container">
+            <ul class="intro-list">
+                <li class="intro-item item01" data-aos="fade-right" data-aos-duration="500">
+                    <a href="#profile" class="intro-unit">
+                        <div class="info">핵심 역량과 실무 이력을 소개합니다<div class="line"></div>
                         </div>
-                    <div class="txt-area">
-                        <p class="txt-item"><strong>사용자 모두를</strong></p>
-                        <p class="txt-item"><strong>배려하는</strong></p>
-                        <p><span>홈페이지를</span> 설계합니다.</p>
-                    </div>
+                        <div class="tit-box">
+                            <span class="txt">resume</span>
+                            <p class="tit">profile</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="intro-item item02" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
+                    <a href="#work" class="intro-unit">
+                        <div class="info">참여한 프로젝트 기록입니다<div class="line"></div>
+                        </div>
+                        <div class="tit-box">
+                            <span class="txt">career archive</span>
+                            <p class="tit">work</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="intro-item item03" data-aos="fade-right" data-aos-delay="600" data-aos-duration="500">
+                    <a href="#design" class="intro-unit">
+                        <div class="info">이미지 작업물입니다<div class="line"></div>
+                        </div>
+                        <div class="tit-box">
+                            <span class="txt">visual arts</span>
+                            <p class="tit">design</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="intro-head">
+                <h1 class="tit">porfolio<br>by sunhyejin</h1>
+                <div class="line">
+                    <div class="dot"></div>
                 </div>
             </div>
-        </section>
-        <!-- // visual -->
+        </div>
+    </section>
+    <!-- // intro -->
 
-        <!-- link -->
-        <section class="link">
-            <div class="container">
-                <ul class="link-list">
-                    <li class="link-item item01">
-                        <a href="/sub.html#sec02" class="link-unit">
-                            <div class="info">핵심 역량과 실무 이력을 소개합니다<div class="line"></div>
+    <!-- profile -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <div class="tit-box" data-aos="fade-right" data-aos-anchor="#profile" data-aos-duration="500">
+                <h2 class="tit">profile</h2>
+                <div class="line">
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="profile-body">
+                <div class="skill profile-wrap" data-aos="fade-right" data-aos-duration="500">
+                    <h3 class="profile-tit">skill</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <div class="skill-head">
+                                <span class="icon"><img src="/img/skill-icon01.svg"
+                                        alt="photoshop"></span><span>Photoshop</span>
                             </div>
-                            <div class="tit-box">
-                                <span class="txt">resume</span>
-                                <p class="tit">profile</p>
+                            <div class="skill-body">
+                                <p class="txt">홈페이지 시안, 포스터, 팝업, 배너 등 이미지 제작, AI를 이용한 이미지 생성</p>
                             </div>
-                        </a>
-                    </li>
-                    <li class="link-item item02">
-                        <a href="#sec02" class="link-unit">
-                            <div class="info">참여한 프로젝트 기록입니다<div class="line"></div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-head">
+                                <span class="icon"><img src="/img/skill-icon02.svg" alt="xd"></span><span>XD</span>
                             </div>
-                            <div class="tit-box">
-                                <span class="txt">career archive</span>
-                                <p class="tit">work</p>
+                            <div class="skill-body">
+                                <p class="txt">홈페이지 시안, UI/UX 디자인, interative 효과, 협업</p>
                             </div>
-                        </a>
-                    </li>
-                    <li class="link-item item03">
-                        <a href="#sec03" class="link-unit">
-                            <div class="info">이미지 작업물입니다<div class="line"></div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-head">
+                                <span class="icon"><img src="/img/skill-icon04.svg" alt=""></span><span>HTML, CSS,
+                                    Javascript</span>
                             </div>
-                            <div class="tit-box">
-                                <span class="txt">visual arts</span>
-                                <p class="tit">design</p>
+                            <div class="skill-body">
+                                <p class="txt">크로스브라우징, ES6, 웹호환성, 웹접근성, Jquery plugin을 이용한 동적 인터랙션</p>
                             </div>
-                        </a>
-                    </li>
-                </ul>
-                <div class="link-head">
-                    <h1 class="tit">porfolio<br>by sunhyejin</h1>
-                    <div class="line">
-                        <div class="dot"></div>
-                    </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-head">
+                                <span class="icon"><img src="/img/skill-icon11.svg"></span><span>기타 사용 가능한
+                                    프로그램</span>
+                            </div>
+                            <div class="skill-body">
+                                <div class="icon"><img src="/img/skill-icon03.svg" alt="illust"></div>
+                                <div class="icon"><img src="/img/skill-icon06.svg" alt="pdf"></div>
+                                <div class="icon"><img src="/img/skill-icon07.svg" alt="powerpoint"></div>
+                                <div class="icon"><img src="/img/skill-icon08.svg" alt="word"></div>
+                                <div class="icon"><img src="/img/skill-icon09.svg" alt="Excel"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
+                <div class="timeline profile-wrap" data-aos="fade-right" data-aos-delay="200" data-aos-duration="500">
+                    <h3 class="profile-tit">timeline</h3>
+                    <ul class="timeline-list">
+                        <li class="timeline-item">
+                            <div class="dot"></div>
+                            <p class="date">2018.11 ~ 2019.05</p>
+                            <p class="place">더조은컴퓨터아카데미</p>
+                            <strong class="txt">디지털 웹 & 앱 디자인 콘텐츠 제작(NCS) 수료</strong>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="dot"></div>
+                            <p class="date">2020.05 ~ 2022.11</p>
+                            <p class="place">소프트웨어개발 회사</p>
+                            <strong class="txt">홈페이지 기획, 웹디자인, 퍼블리싱, 홈페이지 유지보수 등</strong>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="dot"></div>
+                            <p class="date">2022.12 ~ 2023.08</p>
+                            <p class="place">마케팅 회사</p>
+                            <strong class="txt">홈페이지 기획, 웹디자인, 퍼블리싱, 홈페이지 유지보수, 웹진 관리 등</strong>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="dot"></div>
+                            <p class="date">2023.09 ~ 현재</p>
+                            <p class="place">시스템개발 회사</p>
+                            <strong class="txt">홈페이지 기획, 웹디자인, 퍼블리싱, 홈페이지 유지보수, 웹진 제작 등</strong>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="career profile-wrap" data-aos="fade-right" data-aos-duration="500">
+                    <h3 class="profile-tit">주요 프로젝트</h3>
+                    <ul class="career-list">
+                        <li class="career-item">
+                            <p class="client">김해대학교</p>
+                            <p class="tit">홈페이지 디자인 개편 및 기능 개선</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">부산시설공단</p>
+                            <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">울산대학교</p>
+                            <p class="tit">전산시스템 고도화</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">기술보증기금</p>
+                            <p class="tit">대표홈페이지 디자인 개편 및 기능 개선</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">부산대학교</p>
+                            <p class="tit">차세대 스마트 교육정보시스템 디자인 개편 및 기능 개선</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">춘해보건대학교</p>
+                            <p class="tit">현장실습관리시스템 구축</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">부산광역시 탄소중립지원센터</p>
+                            <p class="tit">홈페이지 디자인 개편 및 기능 개선</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">부산테크노파크</p>
+                            <p class="tit">BIP통합정보관리시스템 구축</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">부산연구원</p>
+                            <p class="tit">데이터 공유 활성을 위한 홈페이지 고도화 사업</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">인제대학교</p>
+                            <p class="tit">의과대학 홈페이지 구축</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">서울주택도시공사, 환경교육포털, 극지연구소, 한국자산관리공단</p>
+                            <p class="tit">웹진 제안서 디자인</p>
+                        </li>
+                        <li class="career-item">
+                            <p class="client">경남대표홈페이지</p>
+                            <p class="tit">홈페이지 고도화</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </section>
-        <!-- // link -->
-    </main>
+ 
+        </div>
+    </section>
+    <!-- // profile -->
+
+    <!-- work -->
+    <section class="work" id="work">
+        <div class="container">
+                <div class="tit-box" data-aos="fade-right" data-aos-duration="500">
+                <h2 class="tit">work</h2>
+                <div class="line">
+                    <span class="tit-sub">사용자 중심의 설계로 구현된 웹 프로젝트 결과물</span>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+        <div class="work-body">
+            <ul class="work-list">
+                <li class="work-item active">
+                    <div class="container">
+                        <div class="work-unit">
+                            <div class="img"><img src="/img/work-img01.jpg" alt=""></div>
+                            <div class="info">
+                                <h3 class="client"><a href="https://www.gimhae.ac.kr/CmsHome/MainDefault.aspx"
+                                        target="_blank" title="새창열림">김해대학교<span><i class="material-symbols-outlined">arrow_outward</i><i class="material-symbols-outlined">arrow_outward</i></span></a></h3>
+                                <div class="info-list">
+                                    <h4 class="tit">Part</h4>
+                                    <ul class="part-list">
+                                        <li class="part-item"><span class="badge">Design</span><span>intro, Sub Page</span></li>
+                                        <li class="part-item"><span class="badge">Publishing</span><span>Sub
+                                                Page</span></li>
+                                    </ul>
+                                </div>
+                                <div class="info-list">
+                                    <h4 class="tit">Concept</h4>
+                                    <div>
+                                        <ul class="color-chip">
+                                            <li data-color="#4065D8">intro</li>
+                                            <li data-color="#7068C6">Sub</li>
+                                            <li data-color="#10A78E">Point</li>
+                                        </ul>
+                                        <div class="txt">넓고 다양한 레이아웃을 통해 정보의 양이 많아도 복잡하게 느껴지지 않아 콘텐츠 몰입도 및 정보 인지도
+                                            향상을 유도하였으며, <br>대표 캐릭터와 문구를 사용하여 김해대학교의 정체성을 강조하였습니다. 밝고 화사한 파스텔톤 색상으로
+                                            학교의 활력과 긍정적인 미래를 표현하였습니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="work-item">
+                    <div class="container">
+                        <div class="work-unit">
+                            <div class="img"><img src="/img/work-img02.jpg" alt=""></div>
+                            <div class="info">
+                                <h3 class="client"><a href="https://www.g2soft.biz/www" target="_blank"
+                                        title="새창열림">G2SOFT<span><i
+                                                class="material-symbols-outlined">arrow_outward</i><i
+                                                class="material-symbols-outlined">arrow_outward</i></span></a></h3>
+                                <div class="info-list">
+                                    <h4 class="tit">Part</h4>
+                                    <ul class="part-list">
+                                        <li class="part-item"><span class="badge">Design</span><span>intro
+                                                Page</span></li>
+                                    </ul>
+                                </div>
+                                <div class="info-list">
+                                    <h4 class="tit">Concept</h4>
+                                    <div>
+                                        <ul class="color-chip">
+                                            <li data-color="#EF8200">intro</li>
+                                            <li data-color="#030100">Sub</li>
+                                        </ul>
+                                        <div class="txt">내용 입력</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="work-item">
+                    <div class="container">
+                        <div class="work-unit">
+                            <div class="img"><img src="/img/work-img03.jpg" alt=""></div>
+                            <div class="info">
+                                <h3 class="client"><a href="https://med.inje.ac.kr/d-history/" target="_blank"
+                                        title="새창열림">인제대학교 디지털 역사관<span><i
+                                                class="material-symbols-outlined">arrow_outward</i><i
+                                                class="material-symbols-outlined">arrow_outward</i></span></a></h3>
+                                <div class="info-list">
+                                    <h4 class="tit">Part</h4>
+                                    <ul class="part-list">
+                                        <li class="part-item"><span class="badge">Design</span><span>intro, Sub
+                                                Page</span></li>
+                                        <li class="part-item"><span class="badge">Publishing</span><span>Sub
+                                                Page</span></li>
+                                    </ul>
+                                </div>
+                                <div class="info-list">
+                                    <h4 class="tit">Concept</h4>
+                                    <div>
+                                        <ul class="color-chip">
+                                            <li data-color="#28465E">intro</li>
+                                            <li data-color="#F58220">Sub</li>
+                                        </ul>
+                                        <div class="txt">내용 입력</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="work-item">
+                    <div class="container">
+                        <div class="work-unit">
+                            <div class="img"><img src="/img/work-img01.jpg" alt=""></div>
+                            <div class="info">
+                                <h3 class="client"><a href="https://www.bisco.or.kr/" target="_blank" title="새창열림">경성대학교
+                                        국제처<span><i class="material-symbols-outlined">arrow_outward</i><i
+                                                class="material-symbols-outlined">arrow_outward</i></span></a></h3>
+                                <div class="info-list">
+                                    <h4 class="tit">Part</h4>
+                                    <ul class="part-list">
+                                        <li class="part-item"><span class="badge">Design</span><span>intro, Sub
+                                                Page</span></li>
+                                    </ul>
+                                </div>
+                                <div class="info-list">
+                                    <h4 class="tit">Concept</h4>
+                                    <div>
+                                        <ul class="color-chip">
+                                            <li data-color="#004DA0">intro</li>
+                                            <li data-color="#D7000F">Sub</li>
+                                            <li data-color="#F7B400">Point</li>
+                                        </ul>
+                                        <div class="txt">내용 입력</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- // work -->
+
+    <!-- design -->
+    <section class="design" id="design">
+        <div class="container">
+            <h2 class="intro-tit">design<span class="tit-sub">브랜드의 아이덴티티를 강화하는 이미지</span></h2>
+
+
+
+
+
+
+
+        </div>
+    </section>
+    <!-- // design -->
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="/js/script.js"></script>
-<script src="/js/main.js"></script>
 
 </html>
