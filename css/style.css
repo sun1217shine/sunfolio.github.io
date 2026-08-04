@@ -1,0 +1,142 @@
+/* setting */
+@charset "UTF-8";
+@import url(/css/font.css);
+:root{
+    --gray01:#1F1F1F;
+    --gray02:#6B758F;
+    --gray03:#B5B5B5;
+    --gray04:#EDEDED;
+    --gray05:#F6F6F6;
+    --primary:#4171F2;
+    
+
+    --font-type01:'Pretendard';
+    --font-type02:'Suit';
+}
+
+@media (max-width: 1440px) {
+    :root{
+    }
+}
+@media (max-width: 1024px) {
+    :root{
+    }
+}
+@media (max-width: 768px) {
+    :root{
+    }
+}
+@media (max-width: 480px) {
+    :root{
+    }
+}
+
+/* reset */
+html, body{width: 100%;height: 100%;color: var(--gray01);font-family: var(--font-type01), var(--font-type02), sans-serif; font-size: 18px; line-height: 1.5; letter-spacing: -.3px;-ms-overflow-style: none;  scrollbar-width: none;  -webkit-scrollbar: none;  scroll-behavior: smooth;  word-break: keep-all;}
+*, ::after, ::before {margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+a {text-decoration: none; color: inherit;}
+a:hover {text-decoration: none; color: inherit;}
+a:focus-visible {text-decoration: none; color: inherit; outline-color: red;}
+button, input, select, textarea {background: 0 0; border: 0; font: inherit; color: inherit; outline: 0;}
+button {cursor: pointer;}
+img, video {max-width: 100%; height: auto; vertical-align: middle;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+@media (max-width: 1024px) {
+  html, body{width: 100dvw; font-size: 16px;}
+}
+@media (max-width: 768px) {}
+@media (max-width: 480px) {}
+
+
+/* common */
+
+/* intro */
+.intro{display: flex;flex-direction: column;justify-content: flex-end;align-items: flex-start;gap:60px;height: 100vh;overflow: hidden;
+
+    /* intro-tit */
+    .intro-tit{position: relative;margin:0 100px;
+        .tit-sub{position: absolute;gap: 20px;width: 100%;color: var(--gray02);font-size: 20px;
+            span{background-color: #fff;}
+        }
+        .tit-sub::after{display: block;content: '';position: absolute;left: 0;top: 50%;z-index: -1;width: 100%;height: 1px;background-color: var(--gray03);}
+        .type01{left: 0;top:-40px;
+            span{padding-right: 20px;}
+        }
+        .type02{left: -40px;bottom: 0;width: auto;height: 100%;writing-mode:sideways-lr;
+            span{padding-top: 20px;}
+        }
+        .type02::after{left: 50%;top: initial;bottom: 0;width: 1px;height: 100%;}
+        h1{font-weight: 900;font-size: 120px;text-transform: uppercase;line-height: 1;}
+    }
+
+    /* intro-list */
+    .intro-list{display: flex;width: 100%;height: 60%;}
+    .intro-item{position: relative;z-index: 1;flex: 1 1 30%;background: url(/img/intro-img01.png) no-repeat center/cover;}
+    .intro-item:nth-child(2){background-image: url(/img/intro-img02.png);}
+    .intro-item:nth-child(3){background-image: url(/img/intro-img03.png);}
+    .intro-item::after{display: block;position: absolute;left: 0;top: 0;z-index: -1;content: '';width: 100%;height: 100%;background: linear-gradient(to bottom, rgba(0,0,0,.8), rgba(0,0,0,.2));}
+
+
+
+    .intro-unit{display: block;height: 100%;padding: 60px;color: #fff;
+        .tit{display: inline-block;font-size: 32px;font-weight: 500;transition: all .5s;}
+        .tit::after{display: inline-block;content: '';vertical-align: middle;width: 6px; height: 6px;margin-left: 20px; border-radius: 50%; background-color: #fff;opacity: .5}
+        .info{display: block;}
+        
+    }
+
+
+
+
+
+    @media (max-width: 1440px) {
+         /* intro-tit */
+        .intro-tit{
+            h1{font-size: 80px;}
+        }
+    }
+
+
+
+    @media (max-width: 1024px) {
+        justify-content: flex-start;gap:0;
+        /* intro-tit */
+        .intro-tit{margin: 80px 60px;
+            .tit-sub{font-size: inherit;}
+            .type01{
+                span{padding-right: 12px;}
+            }
+            .type02{left: 0;top: initial;bottom: -40px;width: 100%;height: auto;writing-mode:horizontal-tb;text-align:right;
+                span{padding-top: 0; padding-left: 12px;}
+            }
+            .type02::after{left: 0;top: 50%;width: 100%;height: 1px;}
+            h1{font-size: 60px;}
+        }
+    
+    }
+
+    @media (max-width: 768px) {
+        /* intro-tit */
+        .intro-tit{
+            .tit-sub{font-size: inherit;}
+            h1{font-size: 48px;}
+        }
+    
+    }
+    @media (max-width: 480px) {
+        /* intro-tit */
+        .intro-tit{margin:80px auto;
+            .type01{top: -30px;}
+            .type02{bottom: -30px;}
+            h1{font-size: 42px;}
+        }
+    
+    }
+
+}
+
+
+
